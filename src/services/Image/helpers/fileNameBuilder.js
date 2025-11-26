@@ -53,7 +53,7 @@ export function createResponseObject(
  * @returns {string}
  */
 export function buildFileName(baseName, ext, device = null) {
-  const suffix = device ? `_${device}` : "";
+  const suffix = device ? `-${device}` : "";
   return `${baseName}${suffix}.${ext}`;
 }
 

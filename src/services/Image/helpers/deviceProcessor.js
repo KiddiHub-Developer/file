@@ -61,7 +61,7 @@ export async function processDeviceVariantWithTimestamp(
 ) {
   // Build filename using precomputed parts
   const thumbFileName = device
-    ? `${baseName}_${device}.${ext}`
+    ? `${baseName}-${device}.${ext}`
     : `${baseName}.${ext}`;
   const s3Key = folderPrefix
     ? `${folderPrefix}/${timestamp}-${thumbFileName}`
@@ -203,6 +203,6 @@ export async function cleanupFiles(filePaths) {
   for (const filePath of filePaths) {
     try {
       await fs.unlink(filePath);
-    } catch {}
+    } catch { }
   }
 }
